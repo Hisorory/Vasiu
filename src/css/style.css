@@ -95,12 +95,13 @@ a {
     transition: background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif; /* Schriftart für den Button */
-    width: 250px; /* Fit to content */
-    align-items: center;
+    width: auto; /* Fit to content */
+    text-align: center;
 }
 
 .see-more-projects  {
-    margin-left: 41.5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .modern-button:hover {
