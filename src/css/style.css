@@ -1,0 +1,676 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Schriftart für normalen Text */
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dunkler und transparenter Hintergrund */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menu-bar .logo img {
+    height: 30px; /* Höhe des Logos geändert auf 30px */
+}
+
+.menu-bar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar nav ul li {
+    margin: 0 15px;
+}
+
+.menu-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif; /* Schriftart für Menüpunkte */
+}
+
+.main-section {
+    position: relative;
+    height: 100vh;
+    background: url('../img/bck2.png') no-repeat center center;
+    background-size: cover; /* Hintergrundbild auf die Fensterbreite skalieren */
+    background-attachment: fixed; /* Parallax-Effekt */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Text und Button zentrieren */
+    text-align: left; /* Text linksbündig */
+    color: white;
+    font-size: 1em;
+    padding-top: 60px; /* Höhe der festen Menüleiste, um Überlappung zu vermeiden */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Halbtransparente schwarze Überlagerung */
+}
+
+.static-text {
+    margin-bottom: 10px; /* Verringere den Abstand zwischen statischem und animiertem Text */
+    font-family: 'Montserrat', sans-serif; /* Schriftart für normalen Text */
+    font-size: 3em; /* Größe des statischen Textes */
+}
+
+.modern-button {
+    margin-top: 20px; /* Abstand zwischen dem Text und dem Button */
+    padding: 10px 20px;
+    font-size: 1.2em; /* Anpassung der Schriftgröße */
+    background-color: transparent;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 4px; /* Leicht abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Schriftart für den Button */
+    width: 250px; /* Fit to content */
+    align-items: center;
+}
+
+.see-more-projects  {
+    margin-left: 41.5%;
+}
+
+.modern-button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.modern-button a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
+
+.modern-button a:hover {
+    color: white; /* Change color on hover */
+}
+
+.about-section .modern-button {
+    margin-top: 20px;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projects-section {
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+    background: url('../img/bck2.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.project-overview-section {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Optional: background color for better visibility */
+}
+
+.project-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 40px;
+    width: 80%; /* Adjusted width for centering */
+    max-width: 1200px; /* Maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap; /* Allow wrapping of images and text */
+}
+
+.project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1; /* Allow flex grow */
+}
+
+.project-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-description {
+    max-width: 600px; /* Adjusted max width for the detail view */
+    color: #f4f4f9;
+    text-align: left; /* Left-align the text */
+    flex: 1; /* Allow flex grow */
+    font-size: 1.4em; /* Slightly larger font size */
+}
+
+.project-overview {
+    text-align: center;
+    width: 100%;
+}
+
+.project-overview h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Barlow', sans-serif;
+    color: #f4f4f9;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%; /* Adjusted width for the slideshow */
+    height: auto; /* Adjusted height to auto */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the sides */
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.mySlides {
+    display: none;
+    flex-direction: row;
+    align-items: center; /* Align items at the center */
+    justify-content: center; /* Center the content */
+}
+
+.slide-img {
+    width: 600px; /* Fixed width for the image */
+    height: auto; /* Adjusted height to auto */
+    object-fit: contain; /* Maintain aspect ratio and contain within the container */
+    border-radius: 8px;
+    padding-right: 20px;
+}
+
+.text {
+    color: #f4f4f9;
+    font-size: 1.2em;
+    padding-left: 20px;
+    width: 40%; /* Adjust width for the text */
+    text-align: left; /* Left-align the text */
+}
+
+.text h4 {
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 10px; /* Space between title and description */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    border: none; /* Remove background */
+    background-color: transparent; /* Ensure the background is transparent */
+}
+
+.prev:hover, .next:hover {
+    color: #ccc; /* Lighter color on hover */
+}
+
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+    z-index: -1;
+}
+
+.projects-section h2 {
+    font-size: 3em;
+    margin-bottom: 40px;
+    font-family: 'Barlow', sans-serif; /* Schriftart für Überschriften */
+    color: #f4f4f9;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project, .project-card {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project h3 {
+    font-size: 2em;
+    font-family: 'Barlow', sans-serif;
+    color: #007BFF;
+}
+
+.project:hover, .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project img, .project-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project .project-overlay, .project-card .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.project:hover .project-overlay, .project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3, .project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.project-overlay p, .project-card p {
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-section {
+    background: url('../img/bck2.png') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Barlow', sans-serif;
+    color: #f4f4f9;
+}
+
+.contact-section form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.contact-section button {
+    margin-top: 5px;
+    padding: 6px 20px;
+    font-size: 1.2em; /* Anpassung der Schriftgröße */
+    background-color: transparent;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 4px; /* Leicht abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Schriftart für den Button */
+}
+
+.contact-section button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.contact-section p {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #7a7a7a;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    bottom: 0;
+}
+
+footer .social-media a,
+footer .shortcuts a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer .social-media {
+    margin-bottom: 20px;
+}
+
+footer .social-media a:hover,
+footer .shortcuts a:hover {
+    text-decoration: underline;
+}
+
+/* Rest des CSS bleibt unverändert */
+
+/* Animation für den Text, um von links nach rechts zu schweben */
+@keyframes textAnimation {
+    0%, 15% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    20%, 45% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50%, 100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+#text {
+    opacity: 0;
+    animation: textAnimation 4s ease-in-out infinite;
+    font-family: 'Montserrat', sans-serif; /* Schriftart für Überschriften */
+    font-size: 5em; /* Größe des animierten Textes */
+    white-space: nowrap; /* Verhindert Zeilenumbruch */
+    color: #007BFF;
+}
+
+.text-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Text linksbündig */
+    padding-left: 20vw; /* Leichter Abstand vom linken Rand */
+    width: 100%; /* Breite des Containers konstant halten */
+    overflow: hidden; /* Verhindert das Überlaufen von Text */
+}
+
+/* Flexbox layout for the About Me section */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Adjusts layout for smaller screens */
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px; /* Minimum width to prevent too narrow text blocks */
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+/* Styles for the modern button */
+.modern-button a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.modern-button a:hover {
+    color: white;
+}
+
+.about-section .modern-button {
+    margin-top: 20px;
+}
+
+/* Styles for the resume section */
+.resume-section {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+}
+
+.resume-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2.5em;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+    list-style-type: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #007BFF;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 40px 0; /* Increased margin for more space */
+    min-height: 50px;
+}
+
+.timeline-item.left::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.timeline-item.right::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.timeline-item.left .timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 45%;
+    right: 2.5%;
+}
+
+.timeline-item.right .timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 45%;
+    left: 55%;
+    margin-left: 30px;
+}
+
+.timeline-item.left .timeline-date {
+    position: absolute;
+    right: calc(55% - 10px);
+    transform: translateX(50%);
+    background: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+    top: 10px; /* Adjusted top position */
+}
+
+.timeline-item.right .timeline-date {
+    position: absolute;
+    left: calc(55% - 10px);
+    transform: translateX(-50%);
+    background: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+    top: 10px; /* Adjusted top position */
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styles for the download button */
+.download-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em; /* Anpassung der Schriftgröße */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px; /* Leicht abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Schriftart für den Button */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="menu-bar">
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+  <form id="contactForm">
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <button type="button" class="modern-button" onclick="sendEmail()">Send</button>
+    <p>Note: Clicking "Send" will open your email client to send the message.</p>
+  </form>
+</section>
+<footer>
+
+  <div class="shortcuts">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+<script>
+  function sendEmail() {
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('New Contact Form Submission');
+    const body = encodeURIComponent(message);
+    const recipient = "vasiuahela@gmail.com"; // Replace with your email address
+    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+  }
+</script>
+</body>
+</html>

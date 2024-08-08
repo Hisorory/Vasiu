@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Roboto:wght@400&family=Montserrat:wght=400&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="menu-bar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="home" class="main-section">
+    <div class="overlay"></div>
+    <div class="text-container">
+        <p class="static-text">Hey I am a</p>
+        <h1 id="text">Web Developer</h1>
+        <button class="modern-button"><a href="about.html">Learn more!</a></button>
+    </div>
+</div>
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! I'm a dedicated student at FH Hagenberg, pursuing a degree in Design of Digital Products. My passion lies in the intersection of IT, design, and management. I thrive on creating innovative solutions that combine technical expertise with creative design and effective management strategies.</p>
+            <button class="modern-button"><a href="about.html">Learn More</a></button>
+        </div>
+        <div class="about-image">
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3><a href="projects.html?category=design">Design</a></h3>
+            <div class="project-overlay">
+                <p>Focused on web, graphic, and UI design. Learned user-centered design, Adobe Creative Suite, color theory, and typography.</p>
+            </div>
+        </div>
+        <div class="project">
+            <h3><a href="projects.html?category=it">IT</a></h3>
+            <div class="project-overlay">
+                <p>Involved software development, database management, and system administration. Gained skills in Java, Python, SQL, and using frameworks and APIs.</p>
+            </div>
+        </div>
+        <div class="project">
+            <h3><a href="projects.html?category=project-management">Project Management</a></h3>
+            <div class="project-overlay">
+                <p>Centered on planning, executing, and monitoring projects. Learned project planning, resource management, and agile methods like Scrum and Kanban.</p>
+            </div>
+        </div>
+    </div>
+    <button class="modern-button see-more-projects"><a href="projects.html">See All Projects</a></button>
+</section>
+<footer>
+    <div class="shortcuts">
+        <a href="#home">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</footer>
+<script src="js/scripts.js"></script>
+</body>
+</html>

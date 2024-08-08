@@ -1,0 +1,299 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif; /* Font for normal text */
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menu-bar .logo img {
+    height: 30px; /* Logo height adjusted to 30px */
+}
+
+.menu-bar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar nav ul li {
+    margin: 0 15px;
+}
+
+.menu-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif; /* Font for menu items */
+}
+
+.main-content {
+    flex: 1;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background: url('../img/bck2.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: left;
+    color: white; /* Changed text color to white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* Made the container wider */
+    background-color: rgba(255, 255, 255, 0.9); /* White container with some transparency */
+    padding: 30px; /* Increased padding for a larger box */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    margin-right: 20px;
+    color: #333; /* Changed text color to black */
+    padding: 20px; /* Added padding */
+}
+
+.about-text h2 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #007BFF; /* Use the same color as index.html */
+}
+
+.about-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    margin: 20px 0;
+    max-width: 500px;
+    color: #333; /* Match text color */
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px; /* Optional: Rounded corners for the image */
+    max-height: 400px; /* Set max height for the image */
+}
+
+/* Styles for the modern button */
+.modern-button {
+    margin-top: 20px; /* Abstand zwischen dem Text und dem Button */
+    padding: 10px 20px;
+    font-size: 1.2em; /* Anpassung der Schriftgröße */
+    background-color: transparent;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 4px; /* Leicht abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif; /* Schriftart für den Button */
+    text-decoration: none;
+}
+
+.modern-button:hover {
+    background-color: #007BFF;
+    color: #333333;
+}
+
+.modern-button a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.modern-button a:hover {
+    color: white;
+}
+
+.resume-section {
+    padding: 60px 20px;
+    background: url('../img/bck2.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.resume-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 2.5em;
+    color: #fff; /* Set the heading color to white */
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+    list-style-type: none;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #007BFF;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 40px 0; /* Increased margin for more space */
+    min-height: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.timeline-item.left::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.timeline-item.right::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #007BFF;
+    border-radius: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+}
+
+.timeline-item.left .timeline-content,
+.timeline-item.right .timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.timeline-item.left .timeline-content {
+    right: 11%;
+}
+
+.timeline-item.right .timeline-content {
+    left: 63%;
+    margin-left: 30px;
+}
+
+.timeline-item.left .timeline-date,
+.timeline-item.right .timeline-date {
+    position: absolute;
+    background: #007BFF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Barlow', sans-serif;
+    top: 10px; /* Adjusted top position */
+    margin-bottom: 10px; /* Added margin-bottom for space */
+}
+
+.timeline-item.left .timeline-date {
+    right: calc(55% - 10px);
+    transform: translateX(50%);
+}
+
+.timeline-item.right .timeline-date {
+    left: calc(55% - 10px);
+    transform: translateX(-50%);
+}
+
+.timeline-item.left .timeline-content:hover,
+.timeline-item.right .timeline-content:hover {
+    transform: translateY(-10px); /* Lift the item on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a deeper shadow on hover */
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.resume-download {
+    text-align: center;
+    margin-top: 70px;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+footer .social-media a,
+footer .shortcuts a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer .social-media {
+    margin-bottom: 20px;
+}
+
+footer .social-media a:hover,
+footer .shortcuts a:hover {
+    text-decoration: underline;
+}

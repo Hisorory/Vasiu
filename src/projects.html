@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="menu-bar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<section id="categories" class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div id="design" class="project" onclick="showCategory('design')">
+            <h3>Design</h3>
+            <div class="project-overlay">
+                <p>Focused on web, graphic, and UI design. Learned user-centered design, Adobe Creative Suite, color theory, and typography.</p>
+            </div>
+        </div>
+        <div id="it" class="project" onclick="showCategory('it')">
+            <h3>IT</h3>
+            <div class="project-overlay">
+                <p>Involved software development, database management, and system administration. Gained skills in Java, Python, SQL, and using frameworks and APIs.</p>
+            </div>
+        </div>
+        <div id="project-management" class="project" onclick="showCategory('project-management')">
+            <h3>Project Management</h3>
+            <div class="project-overlay">
+                <p>Centered on planning, executing, and monitoring projects. Learned project planning, resource management, and agile methods like Scrum and Kanban.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project-overview" class="project-overview-section" style="display:none;">
+    <div class="project-overview">
+        <h3 id="project-title">Project Overview</h3>
+        <div class="slideshow-container" id="slideshow-container">
+            <!-- Slideshow content will be dynamically injected here -->
+        </div>
+        <div id="description-container" class="description-container">
+            <!-- Description content will be dynamically injected here -->
+        </div>
+    </div>
+</section>
+
+<section id="project-details" class="projects-section" style="display:none;">
+    <div class="project-details-container">
+        <div class="project-images" id="project-images">
+            <!-- Project images will be dynamically injected here -->
+        </div>
+        <div class="project-description" id="project-description">
+            <!-- Project description will be dynamically injected here -->
+        </div>
+    </div>
+</section>
+
+<section id="project-cards" class="projects-section">
+    <h2>All Projects</h2>
+    <div class="projects">
+        <!-- Design Projects -->
+        <div class="project-card design" onclick="showProject('design', 1)">
+            <img src="design/ME.png" alt="Mon Éclat">
+            <div class="project-overlay">
+                <h3>Mon Éclat</h3>
+                <p>Imaginary company CI enhancing beauty and confidence.</p>
+            </div>
+        </div>
+        <div class="project-card design" onclick="showProject('design', 2)">
+            <img src="design/POI%20Übergabepräsentation%20(1).png" alt="POI Tool for collecting ideas">
+            <div class="project-overlay">
+                <h3>POI Tool for Collecting Ideas</h3>
+                <p>Collaboration with Porsche Informatics for a website structure.</p>
+            </div>
+        </div>
+        <div class="project-card design" onclick="showProject('design', 3)">
+            <img src="design/lost.png" alt="Lost and Found">
+            <div class="project-overlay">
+                <h3>Lost and Found</h3>
+                <p>Website for a lost and found service using Figma.</p>
+            </div>
+        </div>
+        <!-- IT Projects -->
+        <div class="project-card it" onclick="showProject('it', 1)">
+            <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection tool">
+            <div class="project-overlay">
+                <h3>POI Idea Collection Tool</h3>
+                <p>Collaboration with Porsche Informatics for website development.</p>
+            </div>
+        </div>
+        <div class="project-card it" onclick="showProject('it', 2)">
+            <img src="it/7.png" alt="Carmore">
+            <div class="project-overlay">
+                <h3>Carmore</h3>
+                <p>App using Flutter for car maintenance and warning symbols.</p>
+            </div>
+        </div>
+        <div class="project-card it" onclick="showProject('it', 3)">
+            <img src="it/itproject.png" alt="3D Model Website">
+            <div class="project-overlay">
+                <h3>3D Model Website</h3>
+                <p>Website focused on ethical topics using a 3D model.</p>
+            </div>
+        </div>
+        <!-- Project Management Projects -->
+        <div class="project-card project-management" onclick="showProject('project-management', 1)">
+            <img src="pm/zukunft.png" alt="Zukunftsviertel">
+            <div class="project-overlay">
+                <h3>Zukunftsviertel</h3>
+                <p>Website for Mostviertel region to support local farmers and residents.</p>
+            </div>
+        </div>
+        <div class="project-card project-management" onclick="showProject('project-management', 2)">
+            <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+            <div class="project-overlay">
+                <h3>POI Idea Collection Tool</h3>
+                <p>Website and idea collection tool developed for Porsche Informatics, encompassing design, IT, and project management aspects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="shortcuts">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+<script>
+    let slideIndex = 1;
+    let descriptions = [];
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "flex";
+        updateDescription(slideIndex-1);
+    }
+
+    function updateDescription(index) {
+        let descriptionContainer = document.getElementById('description-container');
+        descriptionContainer.innerHTML = descriptions[index];
+    }
+
+    function showCategory(category) {
+        let projectTitle = document.getElementById('project-title');
+        let slideshowContainer = document.getElementById('slideshow-container');
+        let descriptionContainer = document.getElementById('description-container');
+        let projectOverviewSection = document.getElementById('project-overview');
+
+        projectOverviewSection.style.display = 'block';
+
+        if (category === 'design') {
+            projectTitle.textContent = 'Design Projects';
+            slideshowContainer.innerHTML = `
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div class="mySlides fade">
+                <img src="design/ME.png" class="slide-img">
+                <div class="text">
+                    <h4>Mon Éclat</h4>
+                    <p>Imaginary company CI enhancing beauty and confidence.</p>
+                    <button class="modern-button" onclick="showProjectDetails('design', 1)">Learn More</button>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="design/POI%20Übergabepräsentation%20(1).png" class="slide-img">
+                <div class="text">
+                    <h4>POI Tool for Collecting Ideas</h4>
+                    <p>Collaboration with Porsche Informatics for a website structure.</p>
+                    <button class="modern-button" onclick="showProjectDetails('design', 2)">Learn More</button>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="design/lost.png" class="slide-img">
+                <div class="text">
+                    <h4>Lost and Found</h4>
+                    <p>Website for a lost and found service using Figma.</p>
+                    <button class="modern-button" onclick="showProjectDetails('design', 3)">Learn More</button>
+                </div>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        `;
+
+            descriptions = [
+                `<p>Imaginary company CI enhancing beauty and confidence.</p>`,
+                `<p>Collaboration with Porsche Informatics for a website structure.</p>`,
+                `<p>Website for a lost and found service using Figma.</p>`
+            ];
+
+        } else if (category === 'it') {
+            projectTitle.textContent = 'IT Projects';
+            slideshowContainer.innerHTML = `
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div class="mySlides fade">
+                <img src="it/POI%20Übergabepräsentation%20(1).png" class="slide-img">
+                <div class="text">
+                    <h4>POI Idea Collection Tool</h4>
+                    <p>Collaboration with Porsche Informatics for website development.</p>
+                    <button class="modern-button" onclick="showProjectDetails('it', 1)">Learn More</button>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="it/7.png" class="slide-img">
+                <div class="text">
+                    <h4>Carmore</h4>
+                    <p>App using Flutter for car maintenance and warning symbols.</p>
+                    <button class="modern-button" onclick="showProjectDetails('it', 2)">Learn More</button>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="it/itproject.png" class="slide-img">
+                <div class="text">
+                    <h4>3D Model Website</h4>
+                    <p>Website focused on ethical topics using a 3D model.</p>
+                    <button class="modern-button" onclick="showProjectDetails('it', 3)">Learn More</button>
+                </div>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        `;
+
+            descriptions = [
+                `<p>Collaboration with Porsche Informatics for website development.</p>`,
+                `<p>App using Flutter for car maintenance and warning symbols.</p>`,
+                `<p>Website focused on ethical topics using a 3D model.</p>`
+            ];
+
+        } else if (category === 'project-management') {
+            projectTitle.textContent = 'Project Management Projects';
+            slideshowContainer.innerHTML = `
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <div class="mySlides fade">
+                <img src="pm/zukunft.png" class="slide-img">
+                <div class="text">
+                    <h4>Zukunftsviertel</h4>
+                    <p>Website for Mostviertel region to support local farmers and residents.</p>
+                    <button class="modern-button" onclick="showProjectDetails('project-management', 1)">Learn More</button>
+                </div>
+            </div>
+            <div class="mySlides fade">
+                <img src="pm/POI%20Übergabepräsentation.png" class="slide-img">
+                <div class="text">
+                    <h4>POI Idea Collection Tool</h4>
+                    <p>Scrum Master role during the entire development phase.</p>
+                    <button class="modern-button" onclick="showProjectDetails('project-management', 2)">Learn More</button>
+                </div>
+            </div>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        `;
+
+            descriptions = [
+                `<p>Website for Mostviertel region to support local farmers and residents.</p>`,
+                `<p>Scrum Master role during the entire development phase.</p>`
+            ];
+        }
+
+        slideIndex = 1;
+        showSlides(slideIndex);
+        document.getElementById('project-overview').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showProject(category, projectIndex) {
+        showCategory(category);
+        setTimeout(function() {
+            plusSlides(projectIndex);
+        }, 500); // Delay to allow the slideshow to load
+    }
+
+    function showProjectDetails(category, projectIndex) {
+        const projectDetailsSection = document.getElementById('project-details');
+        const projectImagesContainer = document.getElementById('project-images');
+        const projectDescriptionContainer = document.getElementById('project-description');
+
+        projectDetailsSection.style.display = 'block';
+        projectImagesContainer.innerHTML = '';
+        projectDescriptionContainer.innerHTML = '';
+
+        let imagesHtml = '';
+        let descriptionHtml = '';
+
+        if (category === 'design' && projectIndex === 1) {
+            imagesHtml = `
+                <img src="design/ME.png" alt="Mon Éclat">
+                <img src="design/Mon%20Éclat%20Styleguide12.png" alt="Mon Éclat">
+                <img src="design/Mon%20Éclat%20Styleguide16.png" alt="Mon Éclat">
+            `;
+            descriptionHtml = `
+                <h4>Mon Éclat</h4>
+                <p>Imaginary company CI enhancing beauty and confidence. The project involved creating a cohesive brand identity that exudes elegance and charm, aimed at making individuals feel their best. It included logo design, color scheme, typography, and various branding materials to ensure consistency across all platforms.</p>
+                <button class="download-button" onclick="downloadCI()">Download Full CI</button>
+            `;
+        } else if (category === 'design' && projectIndex === 2) {
+            imagesHtml = `
+                <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+            `;
+            descriptionHtml = `
+                <h4>POI Tool for Collecting Ideas</h4>
+                <p>Collaboration with Porsche Informatics to develop a structured website for idea collection. The focus was on user-friendly design and efficient information architecture to enhance the usability and accessibility of the site. It also involved prototyping and user testing to refine the interface.</p>
+            `;
+        } else if (category === 'design' && projectIndex === 3) {
+            imagesHtml = `
+                <img src="design/lost.png" alt="Lost and Found">
+            `;
+            descriptionHtml = `
+                <h4>Lost and Found</h4>
+                <p>Website for a lost and found service using Figma. The project aimed to streamline the process of reporting and finding lost items, with a focus on intuitive navigation and user experience. The design phase included wireframing, prototyping, and user feedback sessions to ensure the solution met user needs.</p>
+            `;
+        } else if (category === 'it' && projectIndex === 1) {
+            imagesHtml = `
+                <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+            `;
+            descriptionHtml = `
+                <h4>POI Idea Collection Tool</h4>
+                <p>Collaboration with Porsche Informatics for website development. The project involved backend development, database management, and front-end integration. Technologies used included Java, SQL, and modern web frameworks to ensure scalability and performance.</p>
+            `;
+        } else if (category === 'it' && projectIndex === 2) {
+            imagesHtml = `
+                <img src="it/7.png" alt="Carmore">
+                <img src="it/2.png" alt="Carmore">
+                <img src="it/3.png" alt="Carmore">
+                <img src="it/4.png" alt="Carmore">
+                <img src="it/5.png" alt="Carmore">
+                <img src="it/6.png" alt="Carmore">
+                <img src="it/8.png" alt="Carmore">
+            `;
+            descriptionHtml = `
+                <h4>Carmore</h4>
+                <p>App using Flutter for car maintenance and warning symbols. The app provided users with an easy-to-use interface to keep track of their car maintenance schedules and understand warning symbols. The project included coding, UI design, and testing phases to ensure a seamless user experience.</p>
+            `;
+        } else if (category === 'it' && projectIndex === 3) {
+            imagesHtml = `
+                <img src="it/itproject.png" alt="3D Model Website">
+            `;
+            descriptionHtml = `
+                <h4>3D Model Website</h4>
+                <p>Website focused on ethical topics using a 3D model. The project integrated interactive 3D models to engage users and enhance the learning experience. It involved using 3D modeling software, web development technologies, and ensuring cross-platform compatibility.</p>
+            `;
+        } else if (category === 'project-management' && projectIndex === 1) {
+            imagesHtml = `
+                <img src="pm/zukunft.png" alt="Zukunftsviertel">
+            `;
+            descriptionHtml = `
+                <h4>Zukunftsviertel</h4>
+                <p>Website for Mostviertel region to support local farmers and residents. The project required detailed planning, coordination with multiple stakeholders, and ongoing monitoring to ensure timely delivery. It also involved resource management and risk mitigation strategies to handle project challenges.</p>
+            `;
+        } else if (category === 'project-management' && projectIndex === 2) {
+            imagesHtml = `
+                <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
+                <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+            `;
+            descriptionHtml = `
+                <h4>POI Idea Collection Tool</h4>
+                <p>Scrum Master role during the entire development phase. This included sprint planning, daily stand-ups, sprint reviews, and retrospectives to ensure the project stayed on track and met its objectives. It also involved facilitating communication between the development team and stakeholders.</p>
+            `;
+        }
+
+        projectImagesContainer.innerHTML = imagesHtml;
+        projectDescriptionContainer.innerHTML = descriptionHtml;
+        projectDetailsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function downloadCI() {
+        window.location.href = 'design/Mon Eclat styleguide.pdf'; // Replace with the correct path to the CI file
+    }
+
+    function scrollToProjects() {
+        document.getElementById('project-cards').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Check for query parameter on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        const category = getQueryParameter('category');
+        if (category) {
+            showCategory(category);
+        }
+    });
+</script>
+</body>
+</html>
