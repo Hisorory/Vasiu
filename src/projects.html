@@ -71,21 +71,21 @@
     <h2>All Projects</h2>
     <div class="projects">
         <!-- Design Projects -->
-        <div class="project-card design" onclick="showProject('design', 1)">
+        <div class="project-card design" onclick="showProject('design', 0)">
             <img src="design/ME.png" alt="Mon Éclat">
             <div class="project-overlay">
                 <h3>Mon Éclat</h3>
                 <p>Imaginary company CI enhancing beauty and confidence.</p>
             </div>
         </div>
-        <div class="project-card design" onclick="showProject('design', 2)">
+        <div class="project-card design" onclick="showProject('design', 1)">
             <img src="design/POI%20Übergabepräsentation%20(1).png" alt="POI Tool for collecting ideas">
             <div class="project-overlay">
                 <h3>POI Tool for Collecting Ideas</h3>
                 <p>Collaboration with Porsche Informatics for a website structure.</p>
             </div>
         </div>
-        <div class="project-card design" onclick="showProject('design', 3)">
+        <div class="project-card design" onclick="showProject('design', 2)">
             <img src="design/lost.png" alt="Lost and Found">
             <div class="project-overlay">
                 <h3>Lost and Found</h3>
@@ -93,21 +93,21 @@
             </div>
         </div>
         <!-- IT Projects -->
-        <div class="project-card it" onclick="showProject('it', 1)">
+        <div class="project-card it" onclick="showProject('it', 0)">
             <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection tool">
             <div class="project-overlay">
                 <h3>POI Idea Collection Tool</h3>
                 <p>Collaboration with Porsche Informatics for website development.</p>
             </div>
         </div>
-        <div class="project-card it" onclick="showProject('it', 2)">
+        <div class="project-card it" onclick="showProject('it', 1)">
             <img src="it/7.png" alt="Carmore">
             <div class="project-overlay">
                 <h3>Carmore</h3>
                 <p>App using Flutter for car maintenance and warning symbols.</p>
             </div>
         </div>
-        <div class="project-card it" onclick="showProject('it', 3)">
+        <div class="project-card it" onclick="showProject('it', 2)">
             <img src="it/itproject.png" alt="3D Model Website">
             <div class="project-overlay">
                 <h3>3D Model Website</h3>
@@ -115,14 +115,14 @@
             </div>
         </div>
         <!-- Project Management Projects -->
-        <div class="project-card project-management" onclick="showProject('project-management', 1)">
+        <div class="project-card project-management" onclick="showProject('project-management', 0)">
             <img src="pm/zukunft.png" alt="Zukunftsviertel">
             <div class="project-overlay">
                 <h3>Zukunftsviertel</h3>
                 <p>Website for Mostviertel region to support local farmers and residents.</p>
             </div>
         </div>
-        <div class="project-card project-management" onclick="showProject('project-management', 2)">
+        <div class="project-card project-management" onclick="showProject('project-management', 1)">
             <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
             <div class="project-overlay">
                 <h3>POI Idea Collection Tool</h3>
@@ -143,6 +143,16 @@
 
 <script src="js/scripts.js"></script>
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        console.log('DOM fully loaded and parsed');
+        const category = getQueryParameter('category');
+        console.log('Category:', category);  // This should log the category query parameter
+        if (category) {
+            showCategory(category);  // Call the function to show the right category
+        }
+    });
+
+
     let slideIndex = 1;
     let descriptions = [];
 
@@ -173,7 +183,7 @@
         let descriptionContainer = document.getElementById('description-container');
         let projectOverviewSection = document.getElementById('project-overview');
 
-        projectOverviewSection.style.display = 'block';
+        projectOverviewSection.style.display = 'block'; // Display the section
 
         if (category === 'design') {
             projectTitle.textContent = 'Design Projects';
@@ -279,7 +289,7 @@
         }
 
         slideIndex = 1;
-        showSlides(slideIndex);
+        showSlides(slideIndex);  // Initialize the slideshow
         document.getElementById('project-overview').scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -315,7 +325,7 @@
             `;
         } else if (category === 'design' && projectIndex === 2) {
             imagesHtml = `
-                <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+
                 <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
                 <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
             `;
@@ -333,7 +343,7 @@
             `;
         } else if (category === 'it' && projectIndex === 1) {
             imagesHtml = `
-                <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+
                 <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
                 <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
             `;
@@ -375,7 +385,7 @@
             imagesHtml = `
                 <img src="pm/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
                 <img src="it/POI%20Übergabepräsentation%20(1).png" alt="POI Idea Collection Tool">
-                <img src="it/POI%20Übergabepräsentation.png" alt="POI Idea Collection Tool">
+
             `;
             descriptionHtml = `
                 <h4>POI Idea Collection Tool</h4>
